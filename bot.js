@@ -74,8 +74,18 @@ client.on('message', message => {
         var playerss = $("body > div.content > div > div:nth-child(3) > div > div:nth-child(4) > div.col-12.col-md-7 > table > tbody > tr:nth-child(4) > td:nth-child(2) > strong").text().trim()
         var map = $("body > div.content > div > div:nth-child(3) > div > div:nth-child(4) > div.col-12.col-md-7 > table > tbody > tr:nth-child(8) > td:nth-child(2) > strong").text()
         var regsin = $("body > div.content > div > div:nth-child(3) > div > div:nth-child(4) > div.col-12.col-md-7 > table > tbody > tr:nth-child(9) > td:nth-child(2)").text()
-        var mapimg = $("body > div.content > div > div:nth-child(3) > div > div:nth-child(4) > div.col-12.col-md-5 > div:nth-child(3) > img").attr("src").replace(/[']/g, "%27").replace(/[ ]/g,"%20")
-        var mapimg2= "https://squad-servers.com"+mapimg  
+         var mapimg;
+        var mapimg2;
+       
+        if($("body > div.content > div > div:nth-child(3) > div > div:nth-child(4) > div.col-12.col-md-5 > div:nth-child(3) > img").attr("src") != undefined)
+        {
+            mapimg = $("body > div.content > div > div:nth-child(3) > div > div:nth-child(4) > div.col-12.col-md-5 > div:nth-child(3) > img").attr("src").replace(/[']/g, "%27").replace(/[ ]/g,"%20")
+            mapimg2= "https://squad-servers.com"+mapimg  
+        }
+        else
+        {
+            mapimg2 = ''
+        }
         var players = $("body > div.content > div > div:nth-child(3) > div > div:nth-child(6) > div > div").text()//.replace(/[,]/g,"\n")
         var location = $("body > div.content > div > div:nth-child(3) > div > div:nth-child(4) > div.col-12.col-md-7 > table > tbody > tr:nth-child(5) > td:nth-child(2) > a").text()
        var color;
