@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const client2 = new Discord.Client();
 
 
 
@@ -58,6 +57,7 @@ message.channel.send("-apl "+name)
         var prefix = message.content.split("info")[0]
         if(prefix != "")
         {
+            console.log('ddd')
             client.guilds.get("351491707554103296").channels.get("564800728061706261").fetchMessage("565411651344400384")
             .then(ms=>{
 if(ms.content.includes(prefix))
