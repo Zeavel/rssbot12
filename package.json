@@ -7,7 +7,7 @@
    "start": "node bot.js"
    },
    "dependencies":{
-   "discord.js": "hydrabolt/discord.js",
+   "discord.js": "11.4.2",
    "request": "2.83.0",
    "cheerio": "^1.0.0-rc.2"
    }
