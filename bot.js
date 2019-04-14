@@ -25,7 +25,92 @@ function hasRole(mem, role)
     }
 }
 
+client.on("ready", r=>{
 
+function game()
+{
+client.channels.get("566962176699662346").fetchMessage("566962371625746448")
+.then(g=>{
+    var num = parseInt(g.content)
+    if(num == 0)
+    {
+g.edit(1)
+var cheerio = require('cheerio');
+var request = require('request');
+var urle = "https://squad-servers.com/server/8745/"
+request(urle, function (error, response, body) {
+  if (!error) {
+      var $ = cheerio.load(body)
+      var status = $("body > div.content > div > div:nth-child(3) > div > div:nth-child(4) > div.col-12.col-md-7 > table > tbody > tr:nth-child(3) > td:nth-child(2) > button").text()
+      var players = $("body > div.content > div > div:nth-child(3) > div > div:nth-child(4) > div.col-12.col-md-7 > table > tbody > tr:nth-child(4) > td:nth-child(2) > strong").text().trim()
+      if(status == "Online")
+      {
+          client.user.setActivity(players + " players", { type: "PLAYING"})
+         /* client.user.setPresence({ game: { name: players }, status: 'online' })
+          .then(console.log)
+          .catch(console.error);*/
+      }
+      if(status == "Offline")
+      {
+        client.user.setPresence({status: 'dnd', activity: {name: "Offline"}})
+        
+      }
+}})
+    }
+    if(num == 1)
+    {
+        g.edit(2)
+        var cheerio = require('cheerio');
+        var request = require('request');
+        var urle = "https://squad-servers.com/server/8746/"
+        request(urle, function (error, response, body) {
+          if (!error) {
+              var $ = cheerio.load(body)
+              var status = $("body > div.content > div > div:nth-child(3) > div > div:nth-child(4) > div.col-12.col-md-7 > table > tbody > tr:nth-child(3) > td:nth-child(2) > button").text()
+              var players = $("body > div.content > div > div:nth-child(3) > div > div:nth-child(4) > div.col-12.col-md-7 > table > tbody > tr:nth-child(4) > td:nth-child(2) > strong").text().trim()
+              if(status == "Online")
+              {
+                  client.user.setActivity(players + " players", { type: "PLAYING"})
+                 /* client.user.setPresence({ game: { name: players }, status: 'online' })
+                  .then(console.log)
+                  .catch(console.error);*/
+              }
+              if(status == "Offline")
+              {
+                client.user.setPresence({status: 'dnd', activity: {name: "Offline"}})
+                
+              }
+        }})
+    }
+    if(num == 2)
+    {
+        g.edit(0) 
+        var cheerio = require('cheerio');
+        var request = require('request');
+        var urle = "https://squad-servers.com/server/8751/"
+        request(urle, function (error, response, body) {
+          if (!error) {
+              var $ = cheerio.load(body)
+              var status = $("body > div.content > div > div:nth-child(3) > div > div:nth-child(4) > div.col-12.col-md-7 > table > tbody > tr:nth-child(3) > td:nth-child(2) > button").text()
+              var players = $("body > div.content > div > div:nth-child(3) > div > div:nth-child(4) > div.col-12.col-md-7 > table > tbody > tr:nth-child(4) > td:nth-child(2) > strong").text().trim()
+              if(status == "Online")
+              {
+                  client.user.setActivity(players + " players", { type: "PLAYING"})
+                 /* client.user.setPresence({ game: { name: players }, status: 'online' })
+                  .then(console.log)
+                  .catch(console.error);*/
+              }
+              if(status == "Offline")
+              {
+                client.user.setPresence({status: 'dnd', activity: {name: "Offline"}})
+                
+              }
+        }})
+    }
+})
+}
+setInterval(game, 35000)
+})
 client.on('message', message => {
     if(message.content.includes("-rss"))
     {
