@@ -45,14 +45,14 @@ request(urle, function (error, response, body) {
       var players = $("body > div.content > div > div:nth-child(3) > div > div:nth-child(4) > div.col-12.col-md-7 > table > tbody > tr:nth-child(4) > td:nth-child(2) > strong").text().trim()
       if(status == "Online")
       {
-          client.user.setActivity(players + " players", { type: "PLAYING"})
+          client.user.setActivity("RSS+ "+players + " players", { type: "PLAYING"})
          /* client.user.setPresence({ game: { name: players }, status: 'online' })
           .then(console.log)
           .catch(console.error);*/
       }
       if(status == "Offline")
       {
-        client.user.setPresence({status: 'dnd', activity: {name: "Offline"}})
+        client.user.setPresence({status: 'dnd', activity: {name: "RSS+ Offline"}})
         
       }
 }})
@@ -70,14 +70,14 @@ request(urle, function (error, response, body) {
               var players = $("body > div.content > div > div:nth-child(3) > div > div:nth-child(4) > div.col-12.col-md-7 > table > tbody > tr:nth-child(4) > td:nth-child(2) > strong").text().trim()
               if(status == "Online")
               {
-                  client.user.setActivity(players + " players", { type: "PLAYING"})
+                  client.user.setActivity("RSS-inv "+players + " players", { type: "PLAYING"})
                  /* client.user.setPresence({ game: { name: players }, status: 'online' })
                   .then(console.log)
                   .catch(console.error);*/
               }
               if(status == "Offline")
               {
-                client.user.setPresence({status: 'dnd', activity: {name: "Offline"}})
+                client.user.setPresence({status: 'dnd', activity: {name: "RSS-Inv Offline"}})
                 
               }
         }})
@@ -95,14 +95,14 @@ request(urle, function (error, response, body) {
               var players = $("body > div.content > div > div:nth-child(3) > div > div:nth-child(4) > div.col-12.col-md-7 > table > tbody > tr:nth-child(4) > td:nth-child(2) > strong").text().trim()
               if(status == "Online")
               {
-                  client.user.setActivity(players + " players", { type: "PLAYING"})
+                  client.user.setActivity("RSS-Event "+players + " players", { type: "PLAYING"})
                  /* client.user.setPresence({ game: { name: players }, status: 'online' })
                   .then(console.log)
                   .catch(console.error);*/
               }
               if(status == "Offline")
               {
-                client.user.setPresence({status: 'dnd', activity: {name: "Offline"}})
+                client.user.setPresence({status: 'dnd', activity: {name: "RSS-Event Offline"}})
                 
               }
         }})
