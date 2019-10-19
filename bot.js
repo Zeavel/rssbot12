@@ -340,4 +340,4 @@ request(url, function (error, response, body) {
    }
   });
 
-client.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOdKEN);
